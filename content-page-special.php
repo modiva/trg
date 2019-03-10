@@ -51,8 +51,6 @@ if (isset($_GET['special'])) {
 <form method="post" enctype="multipart/form-data" id="gform_1" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
                         <div class="gform_heading">
 
-
-
 			<?php gravity_form( 1, false, false, false, '', false );
 
 			echo '</div></div>';
