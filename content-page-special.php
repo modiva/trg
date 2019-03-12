@@ -22,12 +22,9 @@ if (isset($_GET['special'])) {
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php turquoise_reef_group_post_thumbnail(); ?>
-
 	<div class="entry-content" style="text-align:center; width:75%;margin:auto;">
 		<?php
 		the_content();
-
 		
     	global $wpdb;
     	$result = $wpdb->get_results ( "SELECT * FROM wp_spectrg_specials WHERE specials_id = $special"  );
@@ -41,26 +38,13 @@ if (isset($_GET['special'])) {
 			 echo "<div><img id='image-preview' src='". $image_thumb[0] ."' width='100%'></div>";
 			 echo '<div style="margin: 40px 0 20px;">'.$print->specials_description.'</div>';
 			 echo '<div style="margin: 40px 0 20px;">Two people: $'.$price_formatted.' USD plus taxes.<BR>For additional people or nights please call us at 800-538-6802.</div>';
-
-			 //echo "<form method='post' action=''>Pick your desired arrival date: <input type='text' id='datepicker' name='specials_arrival_date' ></form>";
 			 echo '<h4>BOOK NOW!</h4>';
-
-?>
-
-<div class="gf_browser_chrome gform_wrapper gform_validation_error" id="gform_wrapper_1">
-<form method="post" enctype="multipart/form-data" id="gform_1" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
-                        <div class="gform_heading">
-
-			<?php gravity_form( 1, false, false, false, '', false );
-
-			echo '</div></div>';
     	}
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'turquoise-reef-group' ),
-			'after'  => '</div>',
-		) );
+		gravity_form( 1, false, false, false, '', false );
+
 		?>
+
 	</div><!-- .entry-content -->
 		
 	<div style="margin:40px;"><a href="http://199.250.214.111/~turquoise19/">Click here to see all current specials</a></div>
