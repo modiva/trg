@@ -26,9 +26,9 @@ if (isset($_GET['special'])) {
 		<?php
 		the_content();
 		
-    	global $wpdb;
-    	$result = $wpdb->get_results ( "SELECT * FROM wp_spectrg_specials WHERE specials_id = $special"  );
-    	foreach ( $result as $print )   {
+    		global $wpdb;
+    		$result = $wpdb->get_results ( "SELECT * FROM wp_spectrg_specials WHERE specials_id = $special"  );
+    		foreach ( $result as $print )   {
 			 $image_thumb = wp_get_attachment_image_src($print->specials_image_id, 'fullsize');
 			 $price_raw = $print->specials_price;
 			 $price_formatted = number_format( $price_raw, 2, ".", "," );
@@ -39,10 +39,9 @@ if (isset($_GET['special'])) {
 			 echo '<div style="margin: 40px 0 20px;">'.$print->specials_description.'</div>';
 			 echo '<div style="margin: 40px 0 20px;">Two people: $'.$price_formatted.' USD plus taxes.<BR>For additional people or nights please call us at 800-538-6802.</div>';
 			 echo '<h4>BOOK NOW!</h4>';
-    	}
+    		}
 
 		gravity_form( 1, false, false, false, '', false );
-
 		?>
 
 	</div><!-- .entry-content -->
