@@ -42,6 +42,7 @@ if (isset($_GET['special'])) {
     		}
 
 		gravity_form( 1, false, false, false, '', false );
+
 		?>
 
 	</div><!-- .entry-content -->
